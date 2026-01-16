@@ -157,7 +157,7 @@ a {
 .instagram:active,
 .instagram:hover {
     background-image: -webkit-gradient(30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285aeb 90%);
-    background-image: -moz-gradient(30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285aeb 90%);
+    background-image: -moz-gradient(30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #d6249f 60%, #285aeb 90%);
     background-image: -ms-gradient(30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285aeb 90%);
     background-image: -o-gradient(30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285aeb 90%);
     background-image: radial-gradient(circle at 30% 107%, #fdf497 0, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285aeb 90%);
@@ -177,7 +177,8 @@ a {
     display: inline-block;
     height: 2px;
     width: 100%;
-    margin-top: 2px;
+    position: relative;
+    top: -16px;
 }
 
 @media screen and (max-width: 1024px) {

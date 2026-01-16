@@ -1,0 +1,116 @@
+:root {
+    --dark-gray: #484848;
+    --medium-gray: #777777;
+    --light-gray: #D0D0D0;
+}
+
+html {
+    zoom: 150%;
+}
+
+body,
+ol,
+ul {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif,
+        "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-weight: 300;
+    color: #fff;
+}
+
+.main {
+    padding: 0;
+    margin: 0;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 24px;
+    letter-spacing: -0.04em;
+    color: #fff;
+    text-align: left;
+}
+
+#avatar {
+    border-radius: 400px;
+    width: 100px;
+}
+
+p.body,
+p.muted,
+li,
+a {
+    border: 0;
+    padding: 0;
+    margin: 0;
+    font-size: 10px;
+    line-height: 14px;
+    letter-spacing: -0.2px;
+    color: #fff;
+}
+
+p.muted,
+div.card-header {
+    color: #fff;
+}
+
+.card {
+    padding: 10px 30px;
+}
+
+.small-caps {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 9px;
+    line-height: 14px;
+    text-align: justify;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: #fff;
+}
+
+div.card-header {
+    padding-bottom: 6px;
+    margin-bottom: 6px;
+    border-bottom: 0.5px solid rgba(255, 255, 255, 0.3);
+}
+
+.job-title {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 11px;
+    line-height: 14px;
+    text-align: justify;
+    letter-spacing: -0.03em;
+    color: #fff;
+}
+
+.company {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 11px;
+    line-height: 14px;
+    text-align: justify;
+    letter-spacing: -0.03em;
+    color: #fff;
+}
+
+.container-1-3 {
+    width: 33%;
+    display: inline-block;
+    vertical-align: top;
+    padding: 30px 0;
+}
+
+.container-2-3 {
+    width: 66%;
+    display: inline-block;
+    vertical-align: top;
+    padding: 30px 0;
+}
+
+@media screen and (max-width: 768px) {
+    .container-1-3,
+    .container-2-3 {
+        width: 100%;
+        padding: 30px 0 0 0;
+    }
+}
