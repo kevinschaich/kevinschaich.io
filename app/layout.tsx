@@ -37,7 +37,13 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>
+      <body
+        className="bg-[#111] text-white"
+        style={{
+          fontFamily:
+            '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"',
+        }}
+      >
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=UA-124166431-1"
           strategy="afterInteractive"

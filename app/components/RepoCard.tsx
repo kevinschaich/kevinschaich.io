@@ -46,7 +46,7 @@ export default function RepoCard({ repo }: RepoCardProps) {
   }, [repo])
 
   if (!data) {
-    return <div className="repo-card">Loading...</div>
+    return <div className="w-[200px] lg:w-[300px]">Loading...</div>
   }
 
   const description = (data.description || '').replace(/:\w+:/g, (match: string) => {
@@ -61,23 +61,17 @@ export default function RepoCard({ repo }: RepoCardProps) {
   })
 
   return (
-    <div className="repo-card">
+    <div className="w-[200px] lg:w-[300px] flex">
       <div
+        className="border-2 border-[#333] rounded-md bg-[#222] p-4 text-sm leading-relaxed text-white flex flex-col h-full w-full"
         style={{
           fontFamily:
             '-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji',
-          border: '1px solid #e1e4e8',
-          borderRadius: '6px',
-          background: 'white',
-          padding: '16px',
-          fontSize: '14px',
-          lineHeight: '1.5',
-          color: '#24292e',
         }}
       >
-        <div style={{ display: 'flex', alignItems: 'center' }}>
+        <div className="flex items-center">
           <svg
-            style={{ fill: '#586069', marginRight: '8px' }}
+            className="mr-2 fill-[#777]"
             viewBox="0 0 16 16"
             version="1.1"
             width="16"
@@ -89,17 +83,17 @@ export default function RepoCard({ repo }: RepoCardProps) {
               d="M2 2.5A2.5 2.5 0 014.5 0h8.75a.75.75 0 01.75.75v12.5a.75.75 0 01-.75.75h-2.5a.75.75 0 110-1.5h1.75v-2h-8a1 1 0 00-.714 1.7.75.75 0 01-1.072 1.05A2.495 2.495 0 012 11.5v-9zm10.5-1V9h-8c-.356 0-.694.074-1 .208V2.5a1 1 0 011-1h8zM5 12.25v3.25a.25.25 0 00.4.2l1.45-1.087a.25.25 0 01.3 0L8.6 15.7a.25.25 0 00.4-.2v-3.25a.25.25 0 00-.25-.25h-3.5a.25.25 0 00-.25.25z"
             />
           </svg>
-          <span style={{ fontWeight: 600, color: '#0366d6' }}>
-            <a style={{ textDecoration: 'none', color: 'inherit' }} href={data.html_url}>
+          <span className="font-semibold">
+            <a className="no-underline text-[#2f90ff]" href={data.html_url}>
               {data.name}
             </a>
           </span>
         </div>
         {data.fork && (
-          <div style={{ fontSize: '12px', color: '#586069' }}>
+          <div className="text-xs text-white">
             Forked from{' '}
             <a
-              style={{ color: 'inherit', textDecoration: 'none' }}
+              className="text-[#2f90ff] no-underline"
               href={data.source?.html_url}
             >
               {data.source?.full_name}
@@ -107,18 +101,14 @@ export default function RepoCard({ repo }: RepoCardProps) {
           </div>
         )}
         <div
-          style={{
-            fontSize: '12px',
-            marginBottom: '16px',
-            marginTop: '8px',
-            color: '#586069',
-          }}
+          className="text-xs mb-4 mt-2 text-white flex-grow"
           dangerouslySetInnerHTML={{ __html: description }}
         />
-        <div style={{ fontSize: '12px', color: '#586069', display: 'flex' }}>
+        <div className="text-xs text-white flex mt-auto">
           {data.language && (
-            <div style={{ marginRight: '16px' }}>
+            <div className="mr-4">
               <span
+                className="mr-2"
                 style={{
                   width: '12px',
                   height: '12px',
@@ -133,16 +123,10 @@ export default function RepoCard({ repo }: RepoCardProps) {
             </div>
           )}
           {data.stargazers_count > 0 && (
-            <div
-              style={{
-                display: 'flex',
-                alignItems: 'center',
-                marginRight: '16px',
-              }}
-            >
+            <div className="flex items-center mr-4">
               <svg
-                style={{ fill: '#586069' }}
-                aria-label="stars"
+                className="fill-[#777]"
+              aria-label="stars"
                 viewBox="0 0 16 16"
                 version="1.1"
                 width="16"
@@ -158,10 +142,10 @@ export default function RepoCard({ repo }: RepoCardProps) {
             </div>
           )}
           {data.forks > 0 && (
-            <div style={{ display: 'flex', alignItems: 'center' }}>
+            <div className="flex items-center">
               <svg
-                style={{ fill: '#586069' }}
-                aria-label="fork"
+                className="fill-[#777]"
+              aria-label="fork"
                 viewBox="0 0 16 16"
                 version="1.1"
                 width="16"

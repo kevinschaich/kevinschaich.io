@@ -48,73 +48,111 @@ const playlists = [
 
 export default function Home() {
   return (
-      <div id="container">
-          <div id="intro">
-              <h1>👋&nbsp;&nbsp;Hi, I&apos;m Kevin.</h1>
-              <img id="avatar" src="/img/avatar.jpg" alt="" />
-              <p>
-                  Building cool shit @{' '}
-                  <strong>
-                      <a href="https://darkgrade.com" target="_blank" rel="noopener noreferrer">
-                          darkgrade
-                      </a>
-                  </strong>
-                  . Prev. @ Palantir / Cornell CS
-              </p>
-          </div>
-
-          <div id="projects">
-              <h1>Projects</h1>
-              <h2>
-                  View more on{' '}
-                  <a className="github" href="https://github.com/kevinschaich">
-                      @kevinschaich on GitHub
-                  </a>
-                  .
-              </h2>
-              <div id="projects-inner">
-                  {repos.map(repo => (
-                      <RepoCard key={repo} repo={repo} />
-                  ))}
-              </div>
-          </div>
-
-          <div id="photos">
-              <h1>Photos</h1>
-              <h2>
-                  View more on &nbsp;
-                  <a
-                      className="instagram"
-                      target="_blank"
-                      href="https://instagram.com/kevinschaich"
-                      rel="noopener noreferrer"
-                  >
-                      @kevinschaich on Instagram<span className="underline"></span>
-                  </a>
-                  .
-              </h2>
-              <div id="photos-inner">
-                  {photos.map((photo, idx) => (
-                      <PhotoCard key={idx} img={photo.img} url={photo.url} />
-                  ))}
-              </div>
-          </div>
-
-          <div id="playlists">
-              <h1>Playlists</h1>
-              <h2>
-                  View more on &nbsp;
-                  <a className="spotify" href="https://open.spotify.com/user/kevinschaich">
-                      @kevinschaich on Spotify
-                  </a>
-                  .
-              </h2>
-              <div id="playlists-inner">
-                  {playlists.map((playlist, idx) => (
-                      <PlaylistCard key={idx} img={playlist.img} url={playlist.url} />
-                  ))}
-              </div>
-          </div>
+    <>
+      <style dangerouslySetInnerHTML={{ __html: `
+        ol, ul {
+          display: flex;
+          font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif,
+            "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+        }
+        a {
+          text-decoration: none;
+        }
+      ` }} />
+      <div className="mx-auto max-w-[1200px] px-10 py-8 flex flex-col md:px-2.5 md:py-8">
+      <div className="flex flex-col text-justify mb-16">
+        <h1 className="text-center text-4xl font-bold mb-6">👋&nbsp;&nbsp;Hi, I&apos;m Kevin.</h1>
+        <img className="mx-auto rounded-full w-[150px] mb-6" src="/img/avatar.jpg" alt="" />
+        <p className="text-xl font-medium leading-8 text-center">
+          Building cool shit @{' '}
+          <a
+            href="https://darkgrade.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-[#ffc800] border-b-2 border-[#ffc800] pb-0.5 font-medium"
+          >
+            darkgrade
+          </a>
+          . Prev. @ Palantir / Cornell CS
+        </p>
       </div>
+
+      <div className="flex flex-col mb-16">
+        <h1 className="text-center text-4xl font-bold mb-3">Projects</h1>
+        <h2 className="text-center text-xl font-medium mb-8">
+          View more on{' '}
+          <a
+            className="text-[#2f90ff] border-b-2 border-[#2f90ff] hover:text-[#2f90ff] hover:border-b-2 hover:border-[#2f90ff] font-medium"
+            href="https://github.com/kevinschaich"
+          >
+            @kevinschaich on GitHub
+          </a>
+          .
+        </h2>
+        <div className="flex flex-row justify-center flex-wrap gap-5 items-stretch">
+          {repos.map((repo) => (
+            <RepoCard key={repo} repo={repo} />
+          ))}
+        </div>
+      </div>
+
+      <div className="flex flex-col mb-16">
+        <h1 className="text-center text-4xl font-bold mb-3">Photos</h1>
+        <h2 className="text-center text-xl font-medium mb-8">
+          View more on &nbsp;
+          <a
+            className="inline relative font-medium"
+            target="_blank"
+            href="https://instagram.com/kevinschaich"
+            rel="noopener noreferrer"
+            style={{
+              backgroundImage:
+                'radial-gradient(circle at 30% 107%, #fdf497 0, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285aeb 90%)',
+              WebkitBackgroundClip: 'text',
+              backgroundClip: 'text',
+              color: 'transparent',
+            }}
+          >
+            @kevinschaich on Instagram
+            <span
+              className="absolute left-0 w-full"
+              style={{
+                height: '2px',
+                bottom: '2px',
+                backgroundImage:
+                  'radial-gradient(circle at 30% 107%, #fdf497 0, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285aeb 90%)',
+                pointerEvents: 'none',
+              }}
+            ></span>
+          </a>
+          .
+        </h2>
+        <div className="flex flex-row justify-center flex-wrap gap-5">
+          {photos.map((photo, idx) => (
+            <PhotoCard key={idx} img={photo.img} url={photo.url} />
+          ))}
+        </div>
+      </div>
+
+      <div className="flex flex-col">
+        <h1 className="text-center text-4xl font-bold mb-3">Playlists</h1>
+        <h2 className="text-center text-xl font-medium mb-8">
+          View more on &nbsp;
+          <a
+            className="text-[#1db954] border-b-2 border-[#1db954] hover:text-[#1db954] hover:border-b-2 hover:border-[#1db954] font-medium"
+            href="https://open.spotify.com/user/kevinschaich"
+          >
+            @kevinschaich on Spotify
+          </a>
+          .
+        </h2>
+        <div className="flex flex-row justify-center flex-wrap gap-5">
+          {playlists.map((playlist, idx) => (
+            <PlaylistCard key={idx} img={playlist.img} url={playlist.url} />
+          ))}
+        </div>
+      </div>
+    </div>
+    </>
   )
 }
