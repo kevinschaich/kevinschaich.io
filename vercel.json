@@ -1,0 +1,40 @@
+{
+    "rewrites": [
+        {
+            "source": "/github",
+            "destination": "https://github.com/kevinschaich"
+        },
+        {
+            "source": "/linkedin",
+            "destination": "https://www.linkedin.com/in/kevinschaich/"
+        },
+        {
+            "source": "/instagram",
+            "destination": "https://www.instagram.com/kevinschaich/"
+        },
+        {
+            "source": "/x",
+            "destination": "https://x.com/kevinschaich"
+        },
+        {
+            "source": "/twitter",
+            "destination": "https://x.com/kevinschaich"
+        },
+        {
+            "source": "/spotify",
+            "destination": "https://open.spotify.com/user/kevinschaich"
+        },
+        {
+            "source": "/darkgrade",
+            "destination": "https://darkgrade.com"
+        },
+        {
+            "source": "/darkgrade-github",
+            "destination": "https://github.com/darkgrade/darkgrade"
+        },
+        {
+            "source": "/darkgrade-docs",
+            "destination": "https://darkgrade.com/docs"
+        }
+    ]
+}
